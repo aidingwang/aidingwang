@@ -1,0 +1,16 @@
+.ant-carousel .slick-track {
+  height: 450px;
+}
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+  overflow: hidden;
+}
+.ant-carousel .slick-slide img {
+  color: #fff;
+}
+.ant-card-head {
+  display: flex;
+  justify-content: center;
+}

@@ -7,12 +7,12 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import Home from './containers/home';
-import {  About ,Topic,Topics } from './containers/component';
+import Home from './containers/Home';
 import  {ConnectedRouter}  from 'react-router-redux';
 import router from './router/route';
 import './assets/main.less';
-import imageSrc from './assets/img/icon.png';
+import './assets/font icons/fonts.css';
+import titleImg from './assets/img/u139.png';
 
 const configRoute = (router)=>{
   return (
@@ -28,18 +28,37 @@ const configRoute = (router)=>{
 } 
 const BasicExample = () => (
     <div className="app-container">
-      <img src={ imageSrc} />
-      <div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/topics">Topics</Link></li>
-      </ul>
-      <hr/>
-      {
-        configRoute(router)
-      }
-     </div>
+      <header id='header'>
+        <div className="hbox clearfix">
+          <h1 className='logo'>
+            <a title="爱定网" href='/'>爱定网</a>
+          </h1>
+        </div>
+          {/* nav */}
+        <ul className='nav_ul'>
+          <li className='nav_li'><Link to="/">全部分类</Link></li>
+          <li className='nav_li'><Link to="/clothes">服装定制</Link></li>
+          <li className='nav_li'><Link to="/company">定制公司</Link></li>
+          <li className='nav_li'><Link to="/college">定制学堂</Link></li>
+        </ul>
+          {/* search form */}
+          <div className="search_form">
+            <form method="get" action="/s" className="form">
+              <input type="text" className="search-box" />
+              <i className='icon-search'></i>
+            </form>
+          </div>
+      </header>
+      <section id='content' >
+        {
+          configRoute(router)
+        }
+     </section>
+     <footer id="footer">
+          <span className="copyright">
+              &copy Copyright 2019 AiDingWang
+          </span>
+      </footer>
     </div>
 )
 export default BasicExample;
